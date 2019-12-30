@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:cv="clr-namespace:VisualView.CustomRender"
+             xmlns:vm="clr-namespace:VisualView.ViewModels"
+             x:Class="VisualView.Views.OTPValidation">
+    <ContentPage.BindingContext>
+        <vm:OTPValidationVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <cv:GradientColor StartColor="#187683" EndColor="#0CD3EE">
+            <Frame BorderColor="#CDD3D3" CornerRadius="20" BackgroundColor="White" HeightRequest="180" Margin="20" VerticalOptions="CenterAndExpand" Padding="20">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Enter your OTP number" VerticalOptions="CenterAndExpand" FontAttributes="Bold" Padding="10,0,0,0"/>
+                    <cv:BorderEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" Text="{Binding OTP}"/>
+                    <Button Grid.Row="2" Grid.Column="0" CornerRadius="10" Text="Submit"  Command="{Binding OTPClick}" BackgroundColor="#0EA3B7" TextColor="White" Margin="0,15,0,0"/>
+                    <Button Grid.Row="2" Grid.Column="1" CornerRadius="10" Text="Back"  Command="{Binding BackClick}" BackgroundColor="#CB7324" TextColor="White" Margin="0,15,0,0"/>
+                </Grid>
+            </Frame>
+        </cv:GradientColor>
+    </ContentPage.Content>
+</ContentPage>

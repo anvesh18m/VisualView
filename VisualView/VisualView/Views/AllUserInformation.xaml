@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:gn="clr-namespace:VisualView.Genaral"
+             xmlns:bv="clr-namespace:VisualView.Behaviours"
+             xmlns:vm="clr-namespace:VisualView.ViewModels"
+             x:Class="VisualView.Views.AllUserInformation"
+             Title="DashBoard">
+    <ContentPage.BindingContext>
+        <vm:AllUserInformationVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleForLabel" TargetType="Label" >
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ecebef">
+            <ListView ItemsSource="{Binding Source={x:Static gn:Comman.gUserDetails}}" SelectedItem="{Binding SelectedDetails}" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.Behaviors>
+                    <bv:EventToCommandBehavior EventName="ItemTapped" Command="{Binding ItemSelected}"/>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="White" Margin="5,5,5,5" Padding="5,5,10,5" >
+                                <StackLayout>
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="3" />
+                                            <ColumnDefinition Width="7*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="Name" Grid.Row="0" Grid.Column="0" Style="{StaticResource styleForLabel}"  FontAttributes="Bold" />
+                                        <Label Text=":" Grid.Row="0" Grid.Column="1" Style="{StaticResource styleForLabel}"  FontAttributes="Bold" />
+                                        <Label Text="{Binding fb_name}" Grid.Row="0" Grid.Column="2" Style="{StaticResource styleForLabel}"   />
+
+                                        <Label Text="Mobile" Grid.Row="1" Grid.Column="0" Style="{StaticResource styleForLabel}"  FontAttributes="Bold" />
+                                        <Label Text=":" Grid.Row="1" Grid.Column="1" Style="{StaticResource styleForLabel}"  FontAttributes="Bold" />
+                                        <Label Text="{Binding qrm_wallet}" Grid.Row="1" Grid.Column="2" Style="{StaticResource styleForLabel}"  />
+
+                                        <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="#C6BFB9"/>
+                                        <Label Text="{Binding updatedAt,StringFormat='{0:dd-MM-yyyy}'}" Grid.Row="3" Grid.Column="2" Style="{StaticResource styleForLabel}" HorizontalOptions="EndAndExpand" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

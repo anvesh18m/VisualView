@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:cv="clr-namespace:VisualView.CustomRender"
+             xmlns:vm="clr-namespace:VisualView.ViewModels"
+             x:Class="VisualView.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <vm:LoginPageVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <cv:GradientColor StartColor="#187683" EndColor="#0CD3EE">
+            <Frame BorderColor="#CDD3D3" CornerRadius="20" BackgroundColor="White" HeightRequest="150" Margin="20" VerticalOptions="CenterAndExpand" Padding="20">
+                <StackLayout >
+                    <Label Text="Enter your mobile number" FontAttributes="Bold" Padding="10,0,0,0"/>
+                    <cv:BorderEntry BackgroundColor="White" Text="{Binding Mobile}" Keyboard="Telephone"/>
+                    <Button Text="Submit" CornerRadius="10" HorizontalOptions="CenterAndExpand" Command="{Binding SubmitClick}" BackgroundColor="#0EA3B7" TextColor="White" Margin="0,15,0,0"/>
+                </StackLayout>
+            </Frame>
+        </cv:GradientColor>
+    </ContentPage.Content>
+</ContentPage>

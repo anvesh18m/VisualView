@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:cv="clr-namespace:VisualView.CustomRender"
+             xmlns:vm="clr-namespace:VisualView.ViewModels"
+             x:Class="VisualView.Views.Registration">
+    <ContentPage.BindingContext>
+        <vm:RegistrationVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="15,50,15,50" BackgroundColor="#DDDCDA">
+
+            <Label Text="Sign UP" FontAttributes="Bold,Italic" TextColor="{DynamicResource ColorRed}" FontSize="Large"/>
+            <Grid Padding="0,30,0,40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="First Name" FontSize="Small" />
+                <cv:BorderEntry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding FirstName}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Last Name" FontSize="Small" />
+                <cv:BorderEntry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding LastName}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="Email" FontSize="Small" />
+                <cv:BorderEntry Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Email}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Phone No." FontSize="Small" />
+                <cv:BorderEntry Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Mobile}" Keyboard="Telephone"/>
+
+                <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Text="Gender" FontSize="Small" />
+                <cv:BorderPicker Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" SelectedItem="{Binding Gender}">
+                    <cv:BorderPicker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </cv:BorderPicker.Items>
+                </cv:BorderPicker>
+              
+                <Button Grid.Row="10" Grid.Column="0" CornerRadius="10" Text="Submit"  Command="{Binding SubmitClick}" BackgroundColor="#0EA3B7" TextColor="White" Margin="0,15,0,0"/>
+                <Button Grid.Row="10" Grid.Column="1" CornerRadius="10" Text="Back"  Command="{Binding BackClick}" BackgroundColor="#CB7324" TextColor="White" Margin="0,15,0,0"/>
+
+            </Grid>
+         
+            <ActivityIndicator IsRunning="True" IsVisible="{Binding IsBusy}" HorizontalOptions="CenterAndExpand" Color="{DynamicResource ColorRed}"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
