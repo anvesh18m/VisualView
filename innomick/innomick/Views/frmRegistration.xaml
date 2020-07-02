@@ -31,12 +31,12 @@
                         </Grid.ColumnDefinitions>
                         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Registration" Margin="0,0,0,20" FontSize="Large" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" />
 
-                        <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryPassport" Placeholder="Passport" />
-                        <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryFirstName" Placeholder="First Name" />
-                        <Entry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryLastName" Placeholder="Last Name" />
+                        <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryPassport" Placeholder="Passport*" />
+                        <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryFirstName" Placeholder="First Name*" />
+                        <Entry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryLastName" Placeholder="Last Name*" />
                         <Entry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryEmail" Placeholder="Email" />
                         <Picker Grid.Row="5" Grid.Column="0" x:Name="pickerContryCode"  />
-                        <Entry Grid.Row="5" Grid.Column="1"  x:Name="entryPhone" Placeholder="Mobile" />
+                        <Entry Grid.Row="5" Grid.Column="1"  x:Name="entryPhone" Placeholder="Mobile" Keyboard="Numeric"/>
 
                         <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Registration" Margin="0,20,0,20" CornerRadius="10" BackgroundColor="#136DC8" TextColor="White"  Clicked="Registration_Clicked"/>
                     </Grid>

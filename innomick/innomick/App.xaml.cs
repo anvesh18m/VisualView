@@ -14,8 +14,14 @@ namespace innomick
         public App()
         {
             InitializeComponent();
-
-            MainPage = new frmRegistration();
+            if (App.DAUtil.GetUserDetails(1) != null)
+            {
+                MainPage = new NavigationPage(new frmUserDetails());
+            }
+            else
+            {
+                MainPage = new frmRegistration();
+            }
         }
         public static DataAccess DAUtil
         {

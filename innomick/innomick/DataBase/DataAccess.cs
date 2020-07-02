@@ -25,6 +25,10 @@ namespace innomick.DataBase
         {
             return dbConn.Insert(oUserDetails);
         }
+        public int UpdateUserDetails(UserDetails oUserDetails)
+        {
+            return dbConn.Execute($"Update UserDetails SET FirstName={oUserDetails.FirstName}, LastName={oUserDetails.LastName},Email ={oUserDetails.Email},CountryCode={oUserDetails.CountryCode},Phone={oUserDetails.Phone},Passport={oUserDetails.Passport} WHERE UserID={oUserDetails.UserID}");
+        }
         #endregion
     }
 }

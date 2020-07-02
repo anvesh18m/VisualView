@@ -17,27 +17,45 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Grid.Column="0" Source="InnomickLogo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <control:CFrame Grid.Row="1" Grid.Column="0" BorderColor="#E0E0E0" CornerRadius="40,40,0,0" BackgroundColor="White" Padding="3" Margin="0,30,0,0">
-                    <Grid Margin="10,0" RowSpacing="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="7*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TranslationY="-35" HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="1" Grid.Column="0" Text="Passport" />
-                        <Label Grid.Row="1" Grid.Column="1" x:Name="labelPassport" />
+                    <StackLayout Margin="10,0">
+                        <Image TranslationY="-35" HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
 
-                      
-                        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Update Profile" Margin="0,20,0,20" CornerRadius="10" BackgroundColor="#136DC8" TextColor="White"  Clicked="Update_Clicked"/>
-                    </Grid>
+                        <Label x:Name="labelUserName" HorizontalOptions="CenterAndExpand" FontSize="Title" />
+                        <Label x:Name="labelEmailID" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" />
+                        <BoxView HeightRequest="1" BackgroundColor="#C8D2DB"/>
+                        <Grid RowSpacing="15" Margin="0,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Passport" />
+                            <Label Grid.Row="0" Grid.Column="1" x:Name="labelPassport" />
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="First Name" />
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="labelFirstName" />
+
+                            <Label Grid.Row="2" Grid.Column="0" Text="Last Name" />
+                            <Label Grid.Row="2" Grid.Column="1" x:Name="labelLastName" />
+
+                            <Label Grid.Row="3" Grid.Column="0" Text="Email" />
+                            <Label Grid.Row="3" Grid.Column="1" x:Name="labelEmail" />
+
+                            <Label Grid.Row="4" Grid.Column="0" Text="Phone" />
+                            <Label Grid.Row="4" Grid.Column="1" x:Name="labelPhone" />
+
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Update Profile" Margin="0,40,0,20" CornerRadius="10" BackgroundColor="#136DC8" TextColor="White"  Clicked="Update_Clicked"/>
+                        </Grid>
+                    </StackLayout>
                 </control:CFrame>
 
             </Grid>

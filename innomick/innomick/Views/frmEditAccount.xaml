@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:control="clr-namespace:innomick.CustomeControls"
+             mc:Ignorable="d"
+                  NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#E2E2E2"
+             x:Class="innomick.Views.frmEditAccount">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Margin="10,10,10,0" Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <Image Source="BackButton.png"  HeightRequest="20" WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BackButton_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image  Source="InnomickLogo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="CenterAndExpand" TranslationX="-15" VerticalOptions="Center"/>
+                </StackLayout>
+                <control:CFrame Grid.Row="1" Grid.Column="0" BorderColor="#E0E0E0" CornerRadius="40,40,0,0" BackgroundColor="White" Padding="3">
+                    <StackLayout Margin="10,20">
+                        <StackLayout TranslationY="-35" Orientation="Horizontal" Spacing="0">
+                            <Image HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
+                            <Image Source="camera.png" HeightRequest="20" WidthRequest="20" TranslationX="-140" TranslationY="10" />
+                        </StackLayout>
+                        <Label x:Name="labelUserName" HorizontalOptions="CenterAndExpand" FontSize="Title" />
+                        <Label x:Name="labelEmailID" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" />
+                        <BoxView HeightRequest="1" BackgroundColor="#C8D2DB"/>
+
+                        <Grid Margin="0,10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="8*"/>
+                            </Grid.ColumnDefinitions>
+                        
+                            <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryPassport" Placeholder="Passport" />
+                            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryFirstName" Placeholder="First Name" />
+                            <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryLastName" Placeholder="Last Name" />
+                            <Entry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="entryEmail" Placeholder="Email" />
+                            <Picker Grid.Row="4" Grid.Column="0" x:Name="pickerContryCode"  />
+                            <Entry Grid.Row="4" Grid.Column="1"  x:Name="entryPhone" Placeholder="Mobile" />
+
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Update Changes" Margin="0,20,0,20" CornerRadius="10" BackgroundColor="#136DC8" TextColor="White"  Clicked="Update_Clicked"/>
+                        </Grid>
+                    </StackLayout>
+                </control:CFrame>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
