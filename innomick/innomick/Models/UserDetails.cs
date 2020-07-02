@@ -13,5 +13,6 @@ namespace innomick.Models
         public string CountryCode { get; set; }
         public string Phone { get; set; }
         public string Passport { get; set; }
+        public string UserProfile { get; set; }
     }
 }

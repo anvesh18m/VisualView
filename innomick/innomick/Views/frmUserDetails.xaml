@@ -7,7 +7,8 @@
              xmlns:control="clr-namespace:innomick.CustomeControls"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#E2E2E2"
-             x:Class="innomick.Views.frmUserDetails">
+             x:Class="innomick.Views.frmUserDetails"
+             Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <ScrollView>
             <Grid>
@@ -18,7 +19,7 @@
                 <Image Grid.Row="0" Grid.Column="0" Source="InnomickLogo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <control:CFrame Grid.Row="1" Grid.Column="0" BorderColor="#E0E0E0" CornerRadius="40,40,0,0" BackgroundColor="White" Padding="3" Margin="0,30,0,0">
                     <StackLayout Margin="10,0">
-                        <Image TranslationY="-35" HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
+                        <Image TranslationY="-35" HeightRequest="60" WidthRequest="60"  Source="UserIcon.png" x:Name="imageUserProfile"  HorizontalOptions="CenterAndExpand" />
 
                         <Label x:Name="labelUserName" HorizontalOptions="CenterAndExpand" FontSize="Title" />
                         <Label x:Name="labelEmailID" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" />

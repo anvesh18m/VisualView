@@ -42,7 +42,11 @@ namespace innomick.Views
                 await DisplayAlert(Constants.AppName, "Please enter your last name.", "OK");
                 return;
             }
-            
+            var result = await DisplayAlert(Constants.AppName, "Are you sure you want to submit?", "OK", "Cancel");
+            if (!result)
+            {
+                return;
+            }
             UserDetails oUserDetails = new UserDetails()
             {
                 UserID = 1,

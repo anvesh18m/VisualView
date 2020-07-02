@@ -27,7 +27,8 @@ namespace innomick.DataBase
         }
         public int UpdateUserDetails(UserDetails oUserDetails)
         {
-            return dbConn.Execute($"Update UserDetails SET FirstName={oUserDetails.FirstName}, LastName={oUserDetails.LastName},Email ={oUserDetails.Email},CountryCode={oUserDetails.CountryCode},Phone={oUserDetails.Phone},Passport={oUserDetails.Passport} WHERE UserID={oUserDetails.UserID}");
+
+            return dbConn.Execute("Update UserDetails SET FirstName=?, LastName=?, Email =? , CountryCode=?, Phone=?, Passport=?, UserProfile=? WHERE UserID=?", oUserDetails.FirstName,oUserDetails.LastName,oUserDetails.LastName, oUserDetails.CountryCode, oUserDetails.Phone, oUserDetails.Passport, oUserDetails.UserProfile, oUserDetails.UserID);
         }
         #endregion
     }

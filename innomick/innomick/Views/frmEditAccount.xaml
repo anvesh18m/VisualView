@@ -26,7 +26,11 @@
                 <control:CFrame Grid.Row="1" Grid.Column="0" BorderColor="#E0E0E0" CornerRadius="40,40,0,0" BackgroundColor="White" Padding="3">
                     <StackLayout Margin="10,20">
                         <StackLayout TranslationY="-35" Orientation="Horizontal" Spacing="0">
-                            <Image HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
+                            <Image HeightRequest="60" WidthRequest="60"  Source="UserIcon.png" x:Name="imageUserProfile"  HorizontalOptions="CenterAndExpand" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ProfileUpdate_Tapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Image Source="camera.png" HeightRequest="20" WidthRequest="20" TranslationX="-140" TranslationY="10" />
                         </StackLayout>
                         <Label x:Name="labelUserName" HorizontalOptions="CenterAndExpand" FontSize="Title" />
