@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:control="clr-namespace:innomick.CustomeControls"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#E2E2E2"
+             x:Class="innomick.Views.frmUserDetails">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Source="InnomickLogo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <control:CFrame Grid.Row="1" Grid.Column="0" BorderColor="#E0E0E0" CornerRadius="40,40,0,0" BackgroundColor="White" Padding="3" Margin="0,30,0,0">
+                    <Grid Margin="10,0" RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TranslationY="-35" HeightRequest="60" WidthRequest="60"  Source="UserIcon.png"  HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Passport" />
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="labelPassport" />
+
+                      
+                        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Update Profile" Margin="0,20,0,20" CornerRadius="10" BackgroundColor="#136DC8" TextColor="White"  Clicked="Update_Clicked"/>
+                    </Grid>
+                </control:CFrame>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
